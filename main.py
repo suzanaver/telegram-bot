@@ -17,7 +17,6 @@ Original file is located at
 # IMPORTS
 # =========================
 
-import os
 import json
 import telebot
 from google.colab import drive
@@ -27,12 +26,11 @@ from pypdf import PdfReader
 import chromadb
 from gtts import gTTS
 
-# =========================
-# CONFIG
-# =========================
 
-TELEGRAM_TOKEN = "TELEGRAM_TOKEN"
-GROQ_API_KEY = "GROQ_API_KEY"
+import os
+
+TELEGRAM_TOKEN = os.getenv("BOT_TOKEN")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 bot = telebot.TeleBot(TELEGRAM_TOKEN)
 
